@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import InfoBoxes from '../InfoBoxes';
+import SingleBox from '../SingleBox';
 import Sub from '../Sub';
 import Title from '../Title';
 
@@ -26,26 +27,26 @@ export default function Benefits() {
           <Sub className='header--sub'>Todo lo necesario para que tu evento sea increible</Sub>
         </div>
         <InfoBoxes>
-          <div className='info'>
+          <SingleBox>
             <img className='icon' src='/imgs/icons/dishes.svg' alt=''/>
             <h3 className='title'>Vajilla completa</h3>
             <p>Contamos con juegos de vajilla completos para adultos y niños para que no tengas que llevar nada desde tu casa.</p>
-          </div>
-          <div className='info'>
+          </SingleBox>
+          <SingleBox>
             <img className='icon' src='/imgs/icons/drinks.svg' alt=''/>
             <h3 className='title'>Atencion al publico</h3>
             <p>En todo momento vas a ser atendido por nosotros para que no falte nada en tu mesa ni en la de los niños.</p>
-          </div>
-          <div className='info'>
+          </SingleBox>
+          <SingleBox>
             <img className='icon' src='/imgs/icons/party.svg' alt=''/>
             <h3 className='title'>Todos los juegos</h3>
             <p>El precio del festejo incluye el <strong>tejo</strong> y el <strong>metegol</strong> por tiempo ilimitado, asi como la <strong>pista de baile</strong> para los mas chicos.</p>
-          </div>
-          <div className='info'>
+          </SingleBox>
+          <SingleBox>
             <img className='icon' src='/imgs/icons/tarjetas.svg' alt=''/>
             <h3 className='title'>Tarjetas de invitacion</h3>
             <p>Contas con tarjetas de invitacion para todos los invitados.</p>
-          </div>
+          </SingleBox>
         </InfoBoxes>
       </div>
     </BenefitsContainer>

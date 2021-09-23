@@ -6,7 +6,14 @@ import Title from '../Title';
 
 const PCalculatorContainer = styled.div`
   background: ${props => props.theme.purple};
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.6rem), 0 100%);
+  padidng-bottom: 3.2rem;
   overflow: hidden;
+  .curveTop {
+    background: white;
+    padding-top: 3.6rem;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.6rem), 0 100%);
+  }
   .wrapper {
     margin: auto;
     max-width: 1200px;
@@ -31,6 +38,7 @@ const PCalculatorContainer = styled.div`
     }
     button, label {
       z-index: 1;
+      cursor: pointer;
     }
     .price--header {
       margin: 0 auto;
@@ -137,9 +145,6 @@ const PCalculatorContainer = styled.div`
                 height: 17px;
               }
             }
-            button:hover {
-              background: ${props => props.theme.green} !important;
-            }
           }
         }
       }
@@ -165,7 +170,7 @@ const PCalculatorContainer = styled.div`
           margin-top: 1.6rem;
           img {
             display: block;
-            width: 48px;
+            width: 40px;
             margin: 0 auto;
             animation: shake 3s ease infinite;
             @keyframes shake {
@@ -187,6 +192,14 @@ const PCalculatorContainer = styled.div`
       }
     }
   }
+  @media (hover: hover) {
+    .extraTimeOptions button:hover {
+      background: ${props => props.theme.green} !important;
+    }
+    .contact a:hover img {
+      animation-play-state: paused !important;
+    }
+  }
   @media (min-width: 920px) {
     .wrapper {
       .floatImg__up {
@@ -203,9 +216,7 @@ export default function PriceCalculator() {
   let week = process.env.REACT_APP_SEMANA;
   let weekend = process.env.REACT_APP_FINDE;
   const [dayEvent, setDayEvent] = useState(week);
-  const [ref, inView, entry] = useInView({
-    threshold: .3
-  });
+  const [ref, inView, entry] = useInView();
   /* Create a new Date and set time to 0 */
   const [extraTime, setExtraTime] = useState(new Date().setHours(0,0,0));
   const [finalPrice, setFinalPrice] = useState(week);
@@ -254,7 +265,8 @@ export default function PriceCalculator() {
       minutesAdded = priceBy30Minutes;
     }
     /* Calculate the final price by adding extra time * price */
-    setFinalPrice(price + hoursAdded + minutesAdded);
+    /* parce to number so it doesn't concatenate instead of sum */
+    setFinalPrice(parseInt(price) + parseInt(hoursAdded) + parseInt(minutesAdded));
   }
 
   useEffect(()=> {
@@ -266,7 +278,7 @@ export default function PriceCalculator() {
         iconDown.style.transform= 'translateY(' + window.scrollY / 8 + 'px)';
       }
     }
-    document.addEventListener('scroll', moveLogo);
+    document.addEventListener('scroll', moveLogo, {passive: true});
     return ()=> {
       document.removeEventListener('scroll', moveLogo);
     }
@@ -274,6 +286,7 @@ export default function PriceCalculator() {
 
   return (
     <PCalculatorContainer ref={ref}>
+      <div className='curveTop'></div>
       <div className='wrapper'>
         <img className='floatImg__up' src='/imgs/icons/white/splash.svg' alt=''/>
         <img className='floatImg__down' src='/imgs/icons/white/shake.svg' alt=''/>
