@@ -6,8 +6,9 @@ import Title from '../Title';
 
 const PCalculatorContainer = styled.div`
   background: ${props => props.theme.purple};
+  background-image: linear-gradient(0deg, ${props => props.theme.purple} 30%, ${props => props.theme.pink} 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.6rem), 0 100%);
-  padidng-bottom: 3.2rem;
+  padding-bottom: 3.2rem;
   overflow: hidden;
   .curveTop {
     background: white;
@@ -137,6 +138,8 @@ const PCalculatorContainer = styled.div`
               background: white;
               border: 2px solid white;
               padding: .8rem;
+              height: 50px;
+              width: 50px;
               border-radius: 25px;
               transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
               img {
@@ -334,7 +337,7 @@ export default function PriceCalculator() {
                 <button onClick={timeRest}>
                   <img src='/imgs/icons/rest.svg' alt='-'/>
                 </button>
-                <span className='timeShow'>+ {new Date(extraTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} hrs</span>
+                <h4 className='timeShow'>+ {new Date(extraTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} hrs</h4>
                 <button onClick={timeAdd}>
                   <img src='/imgs/icons/add.svg' alt='+'/>
                 </button>

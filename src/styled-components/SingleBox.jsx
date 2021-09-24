@@ -11,7 +11,7 @@ const BoxContainer = styled.div`
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 80px;
+    height: 50px;
     object-fit: contain;
     @keyframes flip {
       0% {

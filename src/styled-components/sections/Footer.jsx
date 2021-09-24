@@ -4,11 +4,6 @@ const FooterContainer = styled.footer`
   padding: 3.2rem 1.6rem;
   display: flex;
   flex-direction: column;
-  .curve {
-    ${'' /* background: ${props => props.theme.purple};
-    height: 100px;
-    clip-path: ellipse(252% 100% at 213.62% 0%); */}
-  }
   .date {
     font-weight: bold;
     font-size: 1.5rem;
@@ -46,7 +41,7 @@ const FooterContainer = styled.footer`
     font-size: 1.5rem;
     color: grey;
     a {
-      color: ${props => props.theme.purple};
+      color: inherit;
     }
   }
   @media (hover: hover) {

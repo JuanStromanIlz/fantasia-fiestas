@@ -10,8 +10,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Hero />
       {/* <Gallery /> */}
-      {/* <Hero /> */}
       <Benefits />
       <PriceCalculator />
       <Footer />
