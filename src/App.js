@@ -5,14 +5,16 @@ import { GlobalStyles, theme } from "./styled-components/GlobalStyles";
 import PriceCalculator from "./styled-components/sections/PriceCalculator";
 import Gallery from "./styled-components/sections/Gallery";
 import Hero from "./styled-components/sections/Hero";
+import Reinforce from "./styled-components/sections/Reinforce";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Hero />
-      {/* <Gallery /> */}
+      <Reinforce />
       <Benefits />
+      <Gallery />
       <PriceCalculator />
       <Footer />
     </ThemeProvider>

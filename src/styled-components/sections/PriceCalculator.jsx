@@ -6,15 +6,7 @@ import Title from '../Title';
 
 const PCalculatorContainer = styled.div`
   background: ${props => props.theme.purple};
-  background-image: linear-gradient(0deg, ${props => props.theme.purple} 30%, ${props => props.theme.pink} 100%);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.6rem), 0 100%);
-  padding-bottom: 3.2rem;
   overflow: hidden;
-  .curveTop {
-    background: white;
-    padding-top: 3.6rem;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.6rem), 0 100%);
-  }
   .wrapper {
     margin: auto;
     max-width: 1200px;

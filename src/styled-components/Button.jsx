@@ -9,10 +9,9 @@ const Button = styled.button`
   background: ${props => props.theme.purple};
   color: white;
   padding: 0 2.4rem;
-  span {
-    line-height: 40px;
-    font-family: 'Poppins', sans-serif;
-  }
+  height: 40px;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export default Button;
